@@ -6,7 +6,7 @@ If you want to connect directly to your Atomic Host with your web browser, use t
 
 Run it like so:
 
-    # atomic run cockpit/ws
+    # atomic run ausnimbus/cockpitws
 
 And then use your web browser to log into port 9090 on your host IP address as usual.
 

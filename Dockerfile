@@ -1,13 +1,9 @@
-FROM fedora:22
-MAINTAINER "Stef Walter" <stefw@redhat.com>
+FROM centos:7
 
-RUN dnf -y update
-
-ENV VERSION 118
-ENV RELEASE 1
+MAINTAINER Andrew Lau <andrew.lau@newiteration.com>
 
 # Get this specific version of cockpit-ws
-RUN dnf -y install sed https://kojipkgs.fedoraproject.org/packages/cockpit/$VERSION/$RELEASE.fc23/x86_64/cockpit-ws-$VERSION-$RELEASE.fc23.x86_64.rpm && dnf clean all
+RUN yum -y install sed cockpit-ws && yum clean all
 
 # And the stuff that starts the container
 RUN mkdir -p /container && ln -s /host/proc/1 /container/target-namespace
